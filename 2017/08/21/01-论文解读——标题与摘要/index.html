@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="要看懂一个事物，你至少需要两个重要的参考点，第一个是现在的状态，第二个是原初的状态，通过这两个状态，能够帮助你更好的理解。 对于比特币来说，一起的起点来自一个叫做中本聪的人写的一篇论文————《比特币：一种点对点的电子现金系统》。比特币就是按照这个论文提出的思路和解决方案，通过一组程序，构建了比特币的系统。今天，我们知道比特币已经发展成一个巨大的，没有人能够忽视的体系。但是在当初，这篇今天看来仍然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01.论文解读——标题与摘要">
+<meta property="og:url" content="http://daijun.info/2017/08/21/01-论文解读——标题与摘要/index.html">
+<meta property="og:site_name" content="终身学习，终身践行">
+<meta property="og:description" content="要看懂一个事物，你至少需要两个重要的参考点，第一个是现在的状态，第二个是原初的状态，通过这两个状态，能够帮助你更好的理解。 对于比特币来说，一起的起点来自一个叫做中本聪的人写的一篇论文————《比特币：一种点对点的电子现金系统》。比特币就是按照这个论文提出的思路和解决方案，通过一组程序，构建了比特币的系统。今天，我们知道比特币已经发展成一个巨大的，没有人能够忽视的体系。但是在当初，这篇今天看来仍然">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-29T15:41:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01.论文解读——标题与摘要">
+<meta name="twitter:description" content="要看懂一个事物，你至少需要两个重要的参考点，第一个是现在的状态，第二个是原初的状态，通过这两个状态，能够帮助你更好的理解。 对于比特币来说，一起的起点来自一个叫做中本聪的人写的一篇论文————《比特币：一种点对点的电子现金系统》。比特币就是按照这个论文提出的思路和解决方案，通过一组程序，构建了比特币的系统。今天，我们知道比特币已经发展成一个巨大的，没有人能够忽视的体系。但是在当初，这篇今天看来仍然">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://daijun.info/2017/08/21/01-论文解读——标题与摘要/"/>
+
+
+
+
+
+  <title>01.论文解读——标题与摘要 | 终身学习，终身践行</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">终身学习，终身践行</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">戴军的成长记录</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daijun.info/2017/08/21/01-论文解读——标题与摘要/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="戴军">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="终身学习，终身践行">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">01.论文解读——标题与摘要</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T14:18:39+08:00">
+                2017-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/比特币/" itemprop="url" rel="index">
+                    <span itemprop="name">比特币</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>要看懂一个事物，你至少需要两个重要的参考点，第一个是现在的状态，第二个是原初的状态，通过这两个状态，能够帮助你更好的理解。</p>
+<p>对于比特币来说，一起的起点来自一个叫做中本聪的人写的一篇论文————《比特币：一种点对点的电子现金系统》。比特币就是按照这个论文提出的思路和解决方案，通过一组程序，构建了比特币的系统。今天，我们知道比特币已经发展成一个巨大的，没有人能够忽视的体系。但是在当初，这篇今天看来仍然闪耀着思想光芒的论文，也不过是发表在密码学论坛上的文章而已。虽然在极客圈子里，影响很大，但是，在当初并没有太多人理解并相信这个叫做比特币的东西真的能够发展起来。</p>
+<p>今天的中国比特币首富李笑来先生，当初就是读了论文，坚定了信心，参与了比特币。然而，我们每天都能听到无数的声音，各种声音在吹捧，贬低，污蔑比特币，不绝于耳。我们怎么才能对这些观点和描述的现象作出正确的判断，最好的办法就是从源头理解比特币，从原理上了解比特币。</p>
+<p>既然所有的一切都来自这篇论文，那么，理解这个论文当然就显得非常重要。既然所有人的言论都不过是在诠释或者批判这个论文提出的思想，那么，我们何不来认认真真的解读，理解一下中本聪的这篇论文，到底说了些什么呢？<a id="more"></a></p>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>论文的标题是《<strong>比特币：一种点对点的电子现金系统</strong>》。英文原标题是：<strong>Bitcoin:A Peer-to-Peer Electronic Cash System.</strong></p>
+<p>标题开宗明义，在这里比特币，Bitcoin,被定义了。从标题里就定义了比特币这个名字。Bit是binary digit的缩写，中文叫做比特，是表示信息的最小单位。准确的来说，是表示二进制的一位的信息量，也就是一个0，或者一个1。</p>
+<p>Coin是硬币的意思。硬币通常是比较小面额的钱币，一般采用金属铸造，可以被反复使用。</p>
+<p>在冒号后面的部分是：一种点对点的电子现金系统。逐点分析：</p>
+<h2 id="点对点-Peer-to-Peer："><a href="#点对点-Peer-to-Peer：" class="headerlink" title="点对点/Peer-to-Peer："></a>点对点/Peer-to-Peer：</h2><p>对等式网络（peer-to-peer， 简称P2P），又称点对点技术，是无中心服务器、依靠用户群（peers）交换信息的互联网体系，它的作用在于，减低以往网络传输中的节点，以降低数据丢失的风险。与有中心服务器的中央网络系统不同，对等网络的每个用户端既是一个节点，也有服务器的功能，任何一个节点无法直接找到其他节点，必须依靠其户群进行信息交流。</p>
+<h2 id="电子现金-Electronic-Cash："><a href="#电子现金-Electronic-Cash：" class="headerlink" title="电子现金/Electronic Cash："></a>电子现金/Electronic Cash：</h2><p>电子现金是指一种电子化的货币。这里特别强调用了Cash,现金，表明作者想表达一种可以在日常生活中很方便使用的现金（现钞，纸币，硬币这种可以直接使用的现金），而不是一种类似银行卡，存折这样的电子货币。你跟一个卖水果的小贩并不认识，但是，你们可以直接使用现金进行交易，而无需任何第三方来认证这个交易，或者必须知道客户的姓名之类。现金的特点是无需第三方的支持即可完成交易。后面我们还会对此有深入的分析。</p>
+<h2 id="作者：中本聪（Satoshi-Nakamoto）"><a href="#作者：中本聪（Satoshi-Nakamoto）" class="headerlink" title="作者：中本聪（Satoshi Nakamoto）"></a>作者：中本聪（Satoshi Nakamoto）</h2><p>作为比特币黑粉们手中的一个重要的论点是中本聪（或译作：中本哲史）这个比特币的创始人。因为，直到今天，我们都无法确定，中本聪到底是不是一个人，还是一个团队或者组织。中本聪自始至终只出现在论坛和邮件中，论文是发表在密码学邮件列表里，之后的言论也只是出现在论坛或者邮件中。</p>
+<blockquote>
+<p>2008年11月1日，中本聪发表了论文《比特币：一种点对点的电子现金系统》。</p>
+<p>2009年1月3日，他开发了首个实现比特币算法的客户端程序，并进行了首次挖矿“Mining”，获得了第一批的50个比特币。第一个区块被称为“创世区块”，这标志着比特币金融体系的正式诞生。</p>
+<p>2010年12月5日，在维基解密泄露美国外交电报事件期间，比特币社区呼吁维基解密接受比特币捐款以打破金融封锁。中本聪表示坚决反对，认为比特币还在摇篮中，经不起冲突和争议。</p>
+<p>2010年12月12日，他在比特币论坛中发表了最后一篇文章，提及了最新版本软件中的一些小问题，随后不再露面，电子邮件通讯也逐渐终止。  </p>
+<p>中本聪在其中一个论坛上的个人说明中自称是居住在日本的37岁男人（2013年），但是这一点被广泛质疑。大家纷纷猜测中本聪的真身是谁，但是没有一个能站得住脚的。</p>
+</blockquote>
+<p>有人认为中本聪根本就是一个组织。还有人认为中本聪Satoshi Nakamoto其实是包括三星（Samsung）、东芝（Toshiba）、中道（Nakamichi）和摩托罗拉（Motorola）四家公司的一个组织来主导研发的。</p>
+<p>由于比特币从第一天开始就是全部开源的，其所有代码都公开在网络上，所有人都可以查看和研究，甚至可以复制一份来修改。所以，认为比特币包含巨大的国家或者公司利益的阴谋论想法，是站不住脚的。</p>
+<p>另外一个观点是说中本聪本人持有天量比特币，所以整件事就是阴谋。目前对于中本聪本人持有多少比特币纯属估计，最大的估计量为100万。比特币总量为2100万，也就是不到5%。假定有个人，弄了个发明，然后说我收取5%的收入作为我的报酬，能是个阴谋吗？</p>
+<p>那么，中本聪到底是一个什么人呢？他到底是不是人呢？有人感觉很重要，有人可能觉得没那么重要。是的，我就属于感觉没那么重要的一类人。这个自称中本聪的人，不管他是谁，他所写的论文，他所构建的系统，已经成为我们生活的一部分，而且必将改变这个世界。那么，了解他的思想，了解比特币的每一个细节，比八卦中本聪到底喜欢什么颜色，要来的重要的多。</p>
+<h1 id="论文解读：摘要"><a href="#论文解读：摘要" class="headerlink" title="论文解读：摘要"></a>论文解读：摘要</h1><p>开宗明义，作者在摘要一开始就提出自己的目的和观点。</p>
+<blockquote>
+<p>本文提出了一种完全通过点对点技术实现的电子现金系统，它使得在线支付能够直接由一方发起并支付给另外一方，中间不需要通过任何的金融机构。虽然数字签名（Digital signatures）部分解决了这个问题，但是如果仍然需要第三方的支持才能防止双重支付（double-spending）的话，那么这种系统也就失去了存在的价值。</p>
+</blockquote>
+<p>这两句话尤其重要。不需要通过任何的金融机构，即可实现在线支付，这就是比特币的目标和作用。第二句话则提出现有的数字签名技术，实际上并不能独立实现这个目的。这里的理由非常重要，那就是双重支付问题，也被称为“双重花费”，双花问题。</p>
+<blockquote>
+<p>传统的数字签名，虽然可以验证消费者的身份，但是，如果没有一个可信第三方作为中间验证的话，那么就无法避免有恶意的使用者将同一笔钱分别支付给不通的两个人，从而实现一笔钱，花两次。例如，我拿了10元钱，既买10元钱雪糕，又买10元钱饼干，就是双重支付，双花。这里说的花两次，只是对问题的一种表述方式。实际上，如果能够双花，那么实际上就可以实现“无限花”。所以，这个问题不解决，一切都是空谈。</p>
+</blockquote>
+<p>在作者看来，如果还是需要一个中间机构的花，那么实际上跟现有金融系统运作毫无区别，意义不大。真正有意义的是怎样不通过中间机构也能够避免双重支付问题。</p>
+<p>所以，问题转换了，从如何开发一种不经过金融中介的电子现金系统，变成了，没有第三方支持的前提下解决双重支付问题。</p>
+<p>关于双重支付问题，我们下面还会有详细的解读。我们继续解读论文的摘要部分。</p>
+<blockquote>
+<p>我们(we)在此提出一种解决方案，使现金系统在点对点的环境下运行，并防止双重支付问题。该网络通过随机散列（hashing）对全部交易加上时间戳（timestamps），将它们合并入一个不断延伸的基于随机散列的工作量证明（proof-of-work）的链条作为交易记录，除非重新完成全部的工作量证明，形成的交易记录将不可更改。最长 的链条不仅将作为被观察到的事件序列（sequence）的证明，而且被看做是来自 CPU计算能力最大的池（pool）。只要大多数的 CPU 计算能力都没有打算合作起来对全网进行攻击，那么诚实的节点将会生成最长的、超过攻击者的链条。这个系统本身需要的基础设施非常少。信息尽最大努力在全网传播即可，节点(nodes)可以随时离开和重新加入网络，并将最长的工作量证明链条作为在该节点离线期间发生的交易的证明。</p>
+</blockquote>
+<p>所以，这篇文章提出的解决方案，能够实现点对点环境下，防止双重支付问题的现金系统。我们现在知道，中本聪所提到的双重支付问题，实际上就是所有现金系统面临的共同的问题。</p>
+<p>为什么贵金属货币要有含金量的保证，为什么纸币必须有防伪的设计，为什么银行卡要有用户名密码各种短信验证，本质上，就是为了防止双重支付。在电子现金系统的设计上，以往是必须通过金融中介来作为第三方验证，确保交易有效，防止双重支付，为双方记账。在中本聪看来，</p>
+<p>中本聪第一次提出了一种思路，如果不用金融中介参与，仅仅交易双方，能够防止双重支付。而防止了双重支付，实际上就相当于无需第三方，从而实现了互信。</p>
+<p>信用是社会的基石。不同的信用获得和维持方式，造就了不同的社会形态。从血缘，到宗族，到熟人朋友，到机构征信，信用的扩展，导致了社会运作成本（经济学叫做：交易成本）的下降，使得更大范围和更加灵活的人类协作成为可能，社会自然不断向前发展。而一旦比特币在技术和实践上被证明能够打造一个不可伪造的，诚实的记录，那么就形成了最好的信用证明，而在是在互联网时代的今天，能够基于网络的，无需第三方支持的信用体系。可以想见，交易成本将进一步下降，人类的协作水平也将提高到一个前所未有的高度。</p>
+<p>既然问题本身具有很高的价值，提法没毛病，那么下面我们就转向问题的解决方案是否靠谱了。具体来说，就是整篇论文所提出的方法，能不能彻底解决基于互联网的，无第三方支持的情况下的双重支付问题。</p>
+<p>提要的最后部分提出了一系列的概念，在这里，我们先罗列一下，并不展开。在后续的解释中，我们会逐一将这些概念及其对于比特币体系的作用和价值，做出相应的说明。</p>
+<blockquote>
+<p>随机散列/哈希/hashing </p>
+<p>时间戳/timestamps </p>
+<p>工作量证明/proof-of-work </p>
+<p>序列/sequence</p>
+<p>…  </p>
+</blockquote>
+<p>强调一下，本书不是技术类的书籍，对于技术细节，我们不会有太多的解释，我们会着重通过对技术的理解（说明，举例，类比等方式）来深化对于比特币的理解。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/21/读中本聪论文有感/" rel="next" title="读中本聪论文有感">
+                <i class="fa fa-chevron-left"></i> 读中本聪论文有感
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/22/价值观之再理解/" rel="prev" title="价值观之再理解">
+                价值观之再理解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">戴军</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#标题"><span class="nav-number">1.</span> <span class="nav-text">标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点-Peer-to-Peer："><span class="nav-number">1.1.</span> <span class="nav-text">点对点/Peer-to-Peer：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子现金-Electronic-Cash："><span class="nav-number">1.2.</span> <span class="nav-text">电子现金/Electronic Cash：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者：中本聪（Satoshi-Nakamoto）"><span class="nav-number">1.3.</span> <span class="nav-text">作者：中本聪（Satoshi Nakamoto）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#论文解读：摘要"><span class="nav-number">2.</span> <span class="nav-text">论文解读：摘要</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">戴军</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
